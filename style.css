@@ -24,13 +24,7 @@
     background-repeat: no-repeat;
     height: 100vh;
 }
-.background-content{
-    text-align: center;
-    font-size: 60px;
-    position: relative;
-    top: 20%;
-    left: 0%;
-}
+
 
 
 .main-wrapper{
@@ -70,4 +64,12 @@
 .form-element{
     display: flex;
     flex-direction: column;
+}
+
+
+#background-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: var(--sidebar-width);
 }
