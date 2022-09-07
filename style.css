@@ -20,7 +20,14 @@
 .container{
     display: flex;
 }
-
+span.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 64;
+  font-size: 5rem;
+}
 
 /* background Image */
 .background{
@@ -30,6 +37,21 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+}
+.logo > p {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 300;
+    font-size: 4rem;
+    position: absolute;
+    top: 10vh;
+    width: var(--sidebar-width);
+    text-align: center;
+    color: white;
+    background-color: rgba(96, 104, 136, 0.5);
+    
+    padding: 3rem;
 }
 #background-footer {
     position: absolute;
