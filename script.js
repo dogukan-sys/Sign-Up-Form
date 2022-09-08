@@ -1,4 +1,5 @@
 
+
 const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -20,7 +21,6 @@ function checkInputs() {
     const pwdOneValue = pwdOne.value.trim()
     const pwdTwoValue = pwdTwo.value.trim()
 
-
     // check if empty for all fields
     inputs = [firstname, lastname, email, usernumber, pwdOne, pwdTwo]
     inputs.forEach(element => {
@@ -28,16 +28,19 @@ function checkInputs() {
             setError(element, 'Cannot be empty')
             console.error(`${element.id} is empty`)
         } 
-    });
+    })
+    
     // check validity
-    if (isname(firstnameValue) && firstnameValue !== '') {
+    if (!isname(firstnameValue) && firstnameValue !== '') {
         setError(firstname, 'Only use letters from A-Z')
     }   else if (isname(firstnameValue) && firstnameValue !== ''){
         setSuccess(firstname)
     }
 
-    if (isname(lastnameValue) && lastnameValue !== '') {
+    if (!isname(lastnameValue) && lastnameValue !== '') {
         setError(lastnameValue, 'Only use letters from A-Z')
+    } else if (isname(lastnameValue) && lastnameValue !== '') {
+        setSuccess(lastname)
     }
 
     if (!isemail(emailValue) && emailValue !== ''){
@@ -60,15 +63,15 @@ function checkInputs() {
 
     if (pwdOneValue !== pwdTwoValue && pwdTwoValue !== '') {
         setError(pwdTwo, 'Passwords must match')
-    } else if (pwdOneValue === pwdTwoValue) {
+    } else if (pwdOneValue === pwdTwoValue && pwdTwoValue !== '') {
         setSuccess(pwdTwo)
     }
 
 }
 
-
+// validity functions
 function isname(name) {
-    re = /[a-zA-Z]+/
+    re = /[A-Za-z]+/gi
     return name.match(re)
 }
 
@@ -88,7 +91,7 @@ function isemail(email) {
 }
 
 function setError(input, message) {
-    const formElement = input.parentElement;
+    const formElement = input.parentElement
     const small = formElement.querySelector('small')
     
     small.innerText = message
