@@ -1,6 +1,7 @@
 let dontSubmit = false
 const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
+    checkInputs()
     if (dontSubmit) {
         e.preventDefault()
     }
