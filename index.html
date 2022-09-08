@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="script.js" defer></script>
     <title>Sign-up Now!</title>
 </head>
 <body>
     <div class="container">
         <div class="background">
             <div class="background-content">
-                <p id="background-footer">Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/light-blue?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                <div class="logo">
+                    <p><span class="material-symbols-outlined">spa</span> bloom</p>
+               </div>
+                <p id="background-footer">Photo by <a rel="noopener" target="_blank" href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> 
                 </p>
             </div>
         </div>
@@ -24,37 +28,51 @@
                     <div class="form-block">
                         <div class="form-element">
                             <label for="first-name">FIRST NAME</label>
-                            <input type="text" id="first-name" name="first-name">
+                            <input type="text" id="first-name" name="first-name"  pattern="[A-Za-z]+">
+                            <small>error message</small>
                         </div>
                         <div class="form-element">
                             <label for="last-name">LAST NAME</label>
-                            <input type="text" id="last-name" name="last-name">
+                            <input type="text" id="last-name" name="last-name"  pattern="[A-Za-z]+" >
+                            <small>error message</small>
                         </div>
                     </div>
                     <div class="form-block">
                         <div class="form-element">
                             <label for="email">EMAIL</label>
                             <input type="text" id="email" name="email">
+                            <small>error message</small>
                         </div>
                         <div class="form-element">
                             <label for="user-number">PHONE NUMBER</label>
-                            <input type="text" id="user-number" name="user-number">
+                            <input type="text" id="user-number" name="user-number" >
+                            <small>error message</small>
                         </div>
                     </div>
                     <div class="form-block">
                         <div class="form-element">
-                            <label for="password">PASSWORD</label>
-                            <input type="text" id="password" name="password">
+                            <label for="pwd">PASSWORD</label>
+                            <input 
+                            type="password" 
+                            id="pwd" 
+                            name="password" 
+                            >
+                            <small>error message</small>
                         </div>
                         <div class="form-element">
-                            <label for="con-password">CONFIRM PASSWORD</label>
-                            <input type="text" id="con-password" name="con-password">
+                            <label for="conpwd">CONFIRM PASSWORD</label>
+                            <input
+                            type="password" 
+                            id="conpwd" 
+                            name="con-password"
+                            >
+                            <small>error message</small>
                         </div>
                     </div>
                 </div>
                 <button type="submit">Create Account</button>
             </form>
-            <p></p>
+            <p>Already have an account? <a href="">log in</a></p>
         </div>
     </div>
 </body>
