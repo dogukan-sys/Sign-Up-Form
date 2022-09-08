@@ -143,7 +143,6 @@ input {
     border-bottom: 3px solid var(--dark-blue-gray);
     width: 20rem;
     height: 2rem;
-    background-color: #c2ddff;
 
 }
 input:focus {
