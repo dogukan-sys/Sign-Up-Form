@@ -74,7 +74,7 @@ span.material-symbols-outlined {
     width: var(--main-width);
     height: 100vh;
     justify-content: center;
-    background-color: #fafafa;
+    background-color: #c6ddf9;
 }
 
 .main-content > p {
@@ -99,7 +99,7 @@ p > a {
     gap: 1rem;
     display: flex;
     flex-direction: column;
-    background-color: #FFF;
+    background-color: #c2ddff;
     padding: 5vh;
     margin-bottom: 3vh;
     box-shadow: 0px 5px 5px  rgba(0 0 0 / 35%);
@@ -144,6 +144,7 @@ input {
     width: 20rem;
     height: 2rem;
     padding: 5px;
+    background-color: #c2ddff;
 }
 input:focus {
     outline: none;
@@ -152,8 +153,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px #c2ddff inset !important;
+    box-shadow: 0 0 0 30px #c2ddff inset !important;
 }
 button{
     border: none;
