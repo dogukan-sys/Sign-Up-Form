@@ -129,9 +129,6 @@ p > a {
     visibility: visible;
 }
 
-
-
-
 label {
     font-weight: 500;
     font-size: 0.8rem;
@@ -150,7 +147,12 @@ input {
 input:focus {
     outline: none;
 }
-
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 button{
     border: none;
     margin-left: 5vh;
