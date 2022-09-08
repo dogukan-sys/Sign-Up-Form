@@ -7,8 +7,8 @@
     transition: 0.2s ease-in-out; 
 }
 :root {
-    --sidebar-width: calc(100vw / 3);
-    --main-width: calc(var(--sidebar-width) * 2);
+    --sidebar-width: calc(100vw / 2);
+    --main-width: calc(var(--sidebar-width) * 1);
     /* COLORS HEX */
     --green-blue: #2464A6ff;
     --blue-yonder: #5D73A9ff;
@@ -213,6 +213,9 @@ button:hover {
     }
     .main-content {
         height: 170vh;
+    }
+    .main-content p {
+        font-size: 1rem
     }
     .main-form {
         justify-content: center;
