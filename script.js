@@ -1,9 +1,10 @@
-
-
+let dontSubmit = false
 const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
     checkInputs()
+    if (dontSubmit) {
+        e.preventDefault()
+    }
 })
 const firstname = document.getElementById('first-name')
 const lastname = document.getElementById('last-name')
@@ -26,10 +27,9 @@ function checkInputs() {
     inputs.forEach(element => {
         if (element.value.trim() === ''){
             setError(element, 'Cannot be empty')
-            console.error(`${element.id} is empty`)
         } 
     })
-    
+
     // check validity
     if (!isname(firstnameValue) && firstnameValue !== '') {
         setError(firstname, 'Only use letters from A-Z')
@@ -66,6 +66,15 @@ function checkInputs() {
     } else if (pwdOneValue === pwdTwoValue && pwdTwoValue !== '') {
         setSuccess(pwdTwo)
     }
+    // check if everything is corret for preventDefault
+    inputs.forEach(element => {
+        const formElement = element.parentElement
+        if (formElement.className === 'form-element error') {
+            dontSubmit = true
+            return
+        }
+        dontSubmit = false
+    });
 
 }
 
