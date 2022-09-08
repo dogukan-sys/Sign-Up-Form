@@ -1,10 +1,13 @@
 let dontSubmit = false
 const form = document.querySelector('form')
 form.addEventListener('submit', (e) => {
-    checkInputs()
     if (dontSubmit) {
         e.preventDefault()
     }
+})
+
+form.addEventListener('input', (e) => {
+    checkInputs()
 })
 const firstname = document.getElementById('first-name')
 const lastname = document.getElementById('last-name')
@@ -12,6 +15,7 @@ const email = document.getElementById('email')
 const usernumber = document.getElementById('user-number')
 const pwdOne = document.getElementById('pwd')
 const pwdTwo = document.getElementById('conpwd')
+
 
 
 function checkInputs() {
