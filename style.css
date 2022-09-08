@@ -103,7 +103,8 @@ p > a {
     background-color: #FFF;
     padding: 5vh;
     margin-bottom: 3vh;
-    box-shadow: 0px 5px 5px  rgba(0 0 0 / 35%) ;
+    box-shadow: 0px 5px 5px  rgba(0 0 0 / 35%);
+    gap: 2rem;
 }
 .form-block{
     display: flex;
@@ -113,6 +114,24 @@ p > a {
     display: flex;
     flex-direction: column;
 }
+.form-element small {
+    margin-top: 5px;
+    visibility: hidden;
+}
+.form-element.success input {
+    border-bottom: 4px solid var(--royal-blue-dark);
+}
+.form-element.error input {
+    border-bottom: 4px solid #9E5A96
+}
+
+.form-element.error small {
+    visibility: visible;
+}
+
+
+
+
 label {
     font-weight: 500;
     font-size: 0.8rem;
@@ -123,7 +142,7 @@ input {
     font-weight: 400;
     font-size: 1.25rem;
     border: none;
-    border-bottom: 2px solid var(--royal-blue-dark);
+    border-bottom: 3px solid var(--dark-blue-gray);
     width: 20rem;
     height: 2rem;
     padding: 5px;
@@ -151,3 +170,4 @@ button:hover {
   cursor: pointer;
   box-shadow: 5px 5px 10px rgb(0 0 0 / 35%);
 }
+
