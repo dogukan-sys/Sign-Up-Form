@@ -7,8 +7,8 @@
     transition: 0.2s ease-in-out; 
 }
 :root {
-    --sidebar-width: calc(100vw / 2);
-    --main-width: calc(var(--sidebar-width) * 1);
+    --sidebar-width: calc(100vw / 2.5);
+    --main-width: calc(var(--sidebar-width) * 1.5);
     /* COLORS HEX */
     --green-blue: #2464A6ff;
     --blue-yonder: #5D73A9ff;
