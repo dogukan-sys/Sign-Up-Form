@@ -11,6 +11,7 @@ const usernumber = document.getElementById('user-number')
 const pwdOne = document.getElementById('pwd')
 const pwdTwo = document.getElementById('conpwd')
 
+
 function checkInputs() {
     const firstnameValue = firstname.value.trim()
     const lastnameValue = lastname.value.trim()
@@ -20,28 +21,70 @@ function checkInputs() {
     const pwdTwoValue = pwdTwo.value.trim()
 
 
-    // check if empty
+    // check if empty for all fields
     inputs = [firstname, lastname, email, usernumber, pwdOne, pwdTwo]
     inputs.forEach(element => {
         if (element.value.trim() === ''){
             setError(element, 'Cannot be empty')
             console.error(`${element.id} is empty`)
-        }
+        } 
     });
+    // check validity
+    if (isname(firstnameValue) && firstnameValue !== '') {
+        setError(firstname, 'Only use letters from A-Z')
+    }   else if (isname(firstnameValue) && firstnameValue !== ''){
+        setSuccess(firstname)
+    }
+
+    if (isname(lastnameValue) && lastnameValue !== '') {
+        setError(lastnameValue, 'Only use letters from A-Z')
+    }
 
     if (!isemail(emailValue) && emailValue !== ''){
         setError(email, 'Use a valid email adress')
+    } else if (isemail(emailValue) && emailValue !== '') {
+        setSuccess(email)
+    }
 
-    } else {
-        return
+    if (!isphone(usernumberValue) && usernumberValue !== '') {
+        setError(usernumber, 'Use a valid phone number')
+    } else if (isphone(usernumberValue) && usernumberValue !== '') {
+        setSuccess(usernumber)
+    }
+
+    if(!ispwd(pwdOneValue) && pwdOneValue !== '') {
+        setError(pwdOne, 'Password must contain:\n1 number (0-9)\n1 uppercase letter\n1 lowercase letter\n1 special character')
+    } else if (ispwd(pwdOneValue) && pwdOneValue !== '') {
+        setSuccess(pwdOne)
+    }
+
+    if (pwdOneValue !== pwdTwoValue && pwdTwoValue !== '') {
+        setError(pwdTwo, 'Passwords must match')
+    } else if (pwdOneValue === pwdTwoValue) {
+        setSuccess(pwdTwo)
     }
 
 }
 
+
+function isname(name) {
+    re = /[a-zA-Z]+/
+    return name.match(re)
+}
+
+function ispwd(pwd) {
+    const re = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/gm
+    return pwd.match(re)
+}
+
+function isphone(phone) {
+    const re = /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/g
+    return phone.match(re)
+}
+
 function isemail(email) {
-    if(email.match(/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i)){
-        return true
-    } else return false
+    const re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+    return email.match(re)
 }
 
 function setError(input, message) {
@@ -50,4 +93,11 @@ function setError(input, message) {
     
     small.innerText = message
     formElement.className = 'form-element error'
+}
+function setSuccess(input) {
+    const formElement = input.parentElement
+    const small = formElement.querySelector('small')
+
+    small.innerText = ''
+    formElement.className = 'form-element success'
 }
