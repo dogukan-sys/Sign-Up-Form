@@ -120,7 +120,7 @@ p > a {
     visibility: hidden;
 }
 .form-element.success input {
-    border-bottom: 4px solid var(--royal-blue-dark);
+    border-bottom: 4px solid var(--green-blue);
 }
 .form-element.error input {
     border-bottom: 4px solid #9E5A96
@@ -143,8 +143,8 @@ input {
     border-bottom: 3px solid var(--dark-blue-gray);
     width: 20rem;
     height: 2rem;
-    padding: 5px;
     background-color: #c2ddff;
+
 }
 input:focus {
     outline: none;
