@@ -143,12 +143,8 @@ input {
     border-bottom: 3px solid var(--dark-blue-gray);
     width: 20rem;
     height: 2rem;
-<<<<<<< HEAD
     background-color: #c2ddff;
 
-=======
-    padding: 5px;
->>>>>>> parent of ca5cd05 (background color)
 }
 input:focus {
     outline: none;
