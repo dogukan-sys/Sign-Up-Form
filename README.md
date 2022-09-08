@@ -4,7 +4,7 @@
 
 <h2>🚀 Demo</h2>
 
-[https://github.com/dogukan-sys/Sign-Up-Form/](https://github.com/dogukan-sys/Sign-Up-Form/)
+[https://dogukan-sys.github.io/Sign-Up-Form/](https://dogukan-sys.github.io/Sign-Up-Form/)
 
 <h2>Project Screenshots:</h2>
 
